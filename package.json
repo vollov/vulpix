@@ -2,7 +2,7 @@
   "name": "ocbl-restful-front-end",
   "version": "1.0.0",
   "scripts": {
-    "start": "node dev.ocbl.ca.3011.js",
+    "start": "node greatwallhs.3002.js",
     "test": "karma start karma.conf.js $*"
   },
   "devDependencies": {

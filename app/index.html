@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="ocblApp" class="no-js">
+<html lang="en" ng-app="siteApp" class="no-js">
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
@@ -14,19 +14,109 @@
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	
+
 	<link rel="stylesheet" href="styles/styles.min.css">
 	<link rel="shortcut icon" href="images/favicon.ico">
-	
+
 	<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 
+	<div class="wrapper">
+		<!--start header-->
+		<div class="header">
+			<div class="branding">
+				<div class="logo-title">
+					<a href="http://www.greatwallhs.ca">
+						<img alt="GreatWall Service" src="images/logo.gif">
+					</a>
+				</div>
+				<div class="logo-description">KWCG Area Home Comfort</div>
+			</div>
+			<div class="headerimage"><img src="images/header-bg.jpg" alt="header-image"></div>
+
+			<div class="access">
+				<div class="navigation" ng-controller="MenuCtrl as vm">
+					<ul>
+						<li ng-repeat="navLink in vm.menuItems" class="{{vm.activate(navLink.state)}}">
+							<a href='#/{{navLink.state}}'>{{navLink.text}}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--end of header-->
+
+
+		<!--start main-->
+		<div class="main">
+
+			<ui-view></ui-view>
+
+			<!--start sidebar-->
+			<div id="sidebar">
+				<div class="area">
+					<div class="items">
+						<h3>Useful Business Links</h3>
+						<ul class='xoxo blogroll'>
+							<li><a href="http://www.gccca.ca/">Guelph Chinese Canadian Culture Association</a></li>
+							<li><a href="http://www.jennyli.ca/" rel="contact" target="_blank">Jenny Li &#8211; KW Mortgage Services</a></li>
+							<li><a href="http://www.kwcg.ca">KWCG &#8211; Chinese web portal</a></li>
+							<li><a href="http://www.vollov.ca" target="_blank">Vollov &#8211; Local IT Solution</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!--end of sidebar-->
+		</div>
+		<!--end of main-->
+		<div id="fbg">
+			<div id="fbg_resize">
+				<div class="col c1">
+					<h2><span>Our Services</span></h2>
+					<a href="#"><img src="images/pix1.jpg" width="58" height="58" alt="pix" /></a>
+					<a href="#"><img src="images/pix2.jpg" width="58" height="58" alt="pix" /></a>
+					<a href="#"><img src="images/pix3.jpg" width="58" height="58" alt="pix" /></a>
+					<a href="#"><img src="images/pix4.jpg" width="58" height="58" alt="pix" /></a>
+					<a href="#"><img src="images/pix5.jpg" width="58" height="58" alt="pix" /></a>
+					<a href="#"><img src="images/pix6.jpg" width="58" height="58" alt="pix" /></a>
+				</div>
+				<div class="col c2">
+					<h2><span>Greatwall Home Service</span></h2>
+					<p>Welcome to the site of Great wall Home Comfort Service. We provide cost-effective pure energy solutions for residential, commercial, industrial and institutional customers. We specialises in residential and commercial heating and cooling, plumbing
+						and renovation projects.</p>
+				</div>
+				<div class="col c3">
+					<h2><span>Contact</span></h2>
+					<p>You can contact us by:<br/>Email:<a href="mailto:greatwallhs@yahoo.ca">greatwallhs@yahoo.ca</a><br/>Phone: (519) 500-3189</p>
+					<p>Address: GREAT WALL HOME SERVICES<br />109 Moccasin Drive Waterloo, Ontario, N2L 4C2 </p>
+				</div>
+				<div class="clr"></div>
+			</div>
+		</div>
+
+		<!-- start footer -->
+		<div id="footer">
+			<div id="footer_resize">
+				<div class="bar">
+					<div class="left">&copy; Copyright <a href="http://www.greatwallhs.ca">Greatwall Service</a>.</div>
+					<div class="right">Design by <a href="http://www.vollov.ca/" title="vollov">vollov.ca</a></div>
+				</div>
+				<div class="clr"></div>
+			</div>
+
+		</div>
+		<!--end of footer-->
+
+	</div>
+	<!--end of wrapper-->
 
 	<!--[if lt IE 7]>
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
-	
+
 	<!-- In production use:
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 	-->
@@ -35,11 +125,11 @@
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="bower_components/underscore/underscore.js"></script>
-	
+
 	<!-- In production use:
 	<script src="js/app.min.js"></script>
 	-->
-	
+
 	<script src="js/app.js"></script>
 </body>
 </html>
