@@ -1,0 +1,21 @@
+<brandset>
+    <brand heading="Moen">
+        Moen tab!
+    </brand>
+    <brand heading="Mansfield">
+        Mansfield tab!
+    </brand>
+</brandset>
+
+<int-tab><int-tab/>
+
+
+    <brand heading="Moen">
+        Moen tab!
+    </brand>
+    <brand heading="Mansfield">
+        Mansfield tab!
+    </brand>
+
+
+    //////////

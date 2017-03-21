@@ -1,0 +1,28 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        info card for {{user.name}}
+    </div>
+    <div class="panel-body">
+        <div ng-show='!!user.address'>
+            Address:<br/>
+            {{user.address.city}}
+        </div>
+
+        <br>
+
+        <h4>Friend:</h4>
+        <ul>
+            <li ng-repeat='f in user.friends'>
+                {{f}}
+            </li>
+        </ul>
+
+
+        <div ng-show="!!user.rank">
+            Rank: {{user.rank}}
+        </div>
+        <button ng-show="!user.rank" class="btn btn-success"  ng-click="callMe(user)">Call</button>
+    </div>
+
+</div>

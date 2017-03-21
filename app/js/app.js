@@ -1,17 +1,35 @@
 'use strict';
 
-angular.module('siteApp', ['ui.router', ])
+angular.module('siteApp', ['ui.router', 'labs'])
 .config(['$stateProvider','$locationProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider) {
 	$stateProvider.state('home', {
 		url : '/home',
 		templateUrl : 'views/home.html'
 	})
+	.state('about', {
+		url : '/about',
+		templateUrl : 'views/about.html'
+	})
 	.state('plumbing', {
 		url : '/plumbing',
 		templateUrl : 'views/plumbing.html'
 	});
+
 	$locationProvider.hashPrefix('');
 	$urlRouterProvider.otherwise('home');
+}])
+.controller('mainCtrl',['$scope',function($scope){
+	var vm = this;
+
+	vm.user1 = {
+		name: 'dustin',
+		address:{
+			city: 'toronto',
+		},
+		friends:['Ann','Leah','Mary']
+	};
+
+
 }])
 .controller('MenuCtrl', ['$state','$stateParams',function($state, $stateParams){
 	var vm = this;
@@ -19,6 +37,9 @@ angular.module('siteApp', ['ui.router', ])
 	vm.menuItems = [{
 		state:'home',
 		text: 'Home',
+	},{
+		state:'about',
+		text: 'About',
 	},{
 		state:'plumbing',
 		text: 'Plumbing',
