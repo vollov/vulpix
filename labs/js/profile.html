@@ -1,23 +1,21 @@
-
 <div class="panel panel-primary">
     <div class="panel-heading" ng-click="collapse()">
-        info card for {{user.name}}
+        {{user.name}}
     </div>
     <div class="panel-body" ng-hide="{{collapsed}}">
         <div ng-show='!!user.address'>
-            Address:<br/>
+            <h4>Address:</h4>
             {{user.address.city}}
         </div>
 
         <br>
 
-        <h4>Friend:</h4>
+        <h4>Friends:</h4>
         <ul>
             <li ng-repeat='f in user.friends'>
                 {{f}}
             </li>
         </ul>
-
 
         <div ng-show="!!user.rank">
             Rank: {{user.rank}}

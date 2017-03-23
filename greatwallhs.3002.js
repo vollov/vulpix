@@ -17,11 +17,11 @@ app.use(bodyParser.urlencoded({ extended: false, limit: '1mb' }));
 app.use(bodyParser.json({ limit: '1mb' }));
 
 app.use(cookieParser());
-app.use(favicon(__dirname + '/app/images/favicon.ico'));
-app.use(express.static(__dirname + '/app'));
+app.use(favicon(__dirname + '/favicon.ico'));
+app.use(express.static(__dirname + cfg.app.root));
 
 app.get('*', function(req,res){
-	res.sendFile('index.html', { root: path.resolve(__dirname + '/app') });
+	res.sendFile('index.html', { root: path.resolve(__dirname + cfg.app.root) });
 });
 
 //catch 404 and forward to error handler

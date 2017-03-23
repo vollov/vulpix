@@ -12,13 +12,18 @@ angular.module('labs', [ ])
 		},
 		//replace: true,
 		controller : function($scope) {
-
+			$scope.collapsed =false;
 			//var vmx = this;
 
 			$scope.callMe=function(user){
 				console.log('called');
 				user.rank = "knight";
-			}
+			};
+
+			$scope.collapse=function(){
+				console.log('called collapse()');
+				$scope.collapsed=!$scope.collapsed;
+			};
 			//console.log('called scope', $scope);
 		},
 
